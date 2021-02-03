@@ -25,8 +25,8 @@ export const covidReducer = (state = initialState, action) => {
 		case FETCH_FAILED: {
 			return {
 				...state,
-				isFetching: false,
 				error: action.payload,
+				isFetching: false,
 			};
 		}
 		default:

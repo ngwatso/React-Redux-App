@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getCovidData } from "../reducers";
+import { getCovidData } from "../actions";
 
-const CovidData = ({ data, isFetching, error, getData }) => {
+const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	useEffect(() => {});
 
-	handleGetData = (e) => {
+	const handleGetData = (e) => {
 		e.preventDefault();
-		getData();
+		getCovidData();
 	};
 
 	if (isFetching) {

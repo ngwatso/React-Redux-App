@@ -7,9 +7,11 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-const reducer = () => {};
+import { covidReducer } from "./reducers/covidReducer";
 
-const store = createStore(reducer, applyMiddleware(thunk));
+// const reducer = () => {};
+
+const store = createStore(covidReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
 	<React.StrictMode>

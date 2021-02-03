@@ -10,10 +10,19 @@ export const getCovidData = () => {
 	return (dispatch) => {
 		dispatch({ type: START_FETCHING });
 
-		axios.get("https://covid-api.mmediagroup.fr/v1")
+		axios.get(
+			"https://cors-anywhere.herokuapp.com/https://covid-api.mmediagroup.fr/v1/cases"
+		)
 			.then((res) => {
-				console.log("API DATA =====> ", res);
+				console.log("API DATA =====> ", res.data.US);
+				dispatch({
+					type: GET_COVID_DATA,
+					payload: res.data.US,
+				});
 			})
-			.catch((err) => console.error("ERROR PULLING DATA", err));
+			.catch((err) => {
+				console.error("ERROR PULLING DATA", err.message);
+				dispatch({ type: FETCH_FAILED, payload: err.message });
+			});
 	};
 };
