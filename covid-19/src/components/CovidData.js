@@ -15,10 +15,33 @@ const CovidData = ({ data, isFetching, error, getCovidData }) => {
 		return <h2>Fetching Data...</h2>;
 	}
 	// console.log("getCovidData, covidData.js =====> ", getCovidData());
+	console.log("Covid Data: CovidData.js =====> ", data);
 
 	return (
 		<>
 			<h2>Current Data By State:</h2>
+			<div className="container-state-data">
+				<div
+					key={Object.getOwnPropertyNames(data)}
+					className="state-data"
+				>
+					{data.map((item) => {
+						return (
+							<>
+								<div className="state-name">
+									{Object.getOwnPropertyNames(item)}
+								</div>
+								<div className="confirmed-cases">
+									{item.confirmed}
+								</div>
+								<div className="deaths">
+									{item.deaths}
+								</div>
+							</>
+						);
+					})}
+				</div>
+			</div>
 			{/* <StateData getCovidData={getCovidData} /> */}
 			{/* <div key={data.key} className="state-data">
 				{data.map((item) => {

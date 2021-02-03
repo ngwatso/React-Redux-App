@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 class StateData extends Component {
 	constructor() {
@@ -8,10 +8,11 @@ class StateData extends Component {
 
 	componentDidMount(props) {
 		this.setState({ stateData: props.getCovidData });
-	}
+  }
+  console.log("getCovidData, StateData.js =====> ", stateData);
 
 	render() {
-		// console.log("getCovidData, StateData.js =====> ", stateData);
+		
 		return (
 			<>
 				<div className="container-state-data">
