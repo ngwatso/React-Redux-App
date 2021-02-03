@@ -7,6 +7,8 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
+const reducer = () => {};
+
 const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
