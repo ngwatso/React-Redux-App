@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getCovidData } from "../actions";
+// import StateData from "./StateData";
 
 const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	useEffect(() => {});
@@ -13,10 +14,17 @@ const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	if (isFetching) {
 		return <h2>Fetching Data...</h2>;
 	}
+	// console.log("getCovidData, covidData.js =====> ", getCovidData());
 
 	return (
 		<>
-			<h2>Current Data: {data}</h2>
+			<h2>Current Data By State:</h2>
+			{/* <StateData getCovidData={getCovidData} /> */}
+			{/* <div key={data.key} className="state-data">
+				{data.map((item) => {
+					return <div className="state-name"></div>;
+				})}
+			</div> */}
 			{error && (
 				<div>
 					<h2 style={{ color: "red" }}>Error: {error}</h2>
