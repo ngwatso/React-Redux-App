@@ -6,6 +6,8 @@ import { getCovidData } from "../actions";
 const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	useEffect(() => {});
 
+	const dataArray = [data];
+
 	const handleGetData = (e) => {
 		e.preventDefault();
 		getCovidData();
@@ -14,18 +16,18 @@ const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	if (isFetching) {
 		return <h2>Fetching Data...</h2>;
 	}
-	// console.log("getCovidData, covidData.js =====> ", getCovidData());
-	console.log("Covid Data: CovidData.js =====> ", data);
+	console.log("Covid Data: CovidData.js =====> ", dataArray);
 
 	return (
 		<>
 			<h2>Current Data By State:</h2>
 			<div className="container-state-data">
 				<div
-					key={Object.getOwnPropertyNames(data)}
+					// key={Object.getOwnPropertyNames(data)}
+					key={Date.now()}
 					className="state-data"
 				>
-					{data.map((item) => {
+					{dataArray.map((item) => {
 						return (
 							<>
 								<div className="state-name">

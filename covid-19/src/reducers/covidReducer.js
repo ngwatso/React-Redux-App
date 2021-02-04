@@ -1,7 +1,7 @@
 import { GET_COVID_DATA, START_FETCHING, FETCH_FAILED } from "../actions";
 
 const initialState = {
-	data: "",
+	data: [],
 	isFetching: false,
 	error: "",
 };
