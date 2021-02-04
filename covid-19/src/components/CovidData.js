@@ -7,6 +7,7 @@ const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	useEffect(() => {});
 
 	const dataArray = [data];
+	const stateNames = dataArray.forEach((obj) => obj.key);
 
 	const handleGetData = (e) => {
 		e.preventDefault();
@@ -16,33 +17,37 @@ const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	if (isFetching) {
 		return <h2>Fetching Data...</h2>;
 	}
-	console.log("Covid Data: CovidData.js =====> ", dataArray);
+	console.log("Covid Data: CovidData.js =====> ", stateNames);
 
 	return (
 		<>
-			<h2>Current Data By State:</h2>
+			<h2>Current Data By State (updated hourly):</h2>
 			<div className="container-state-data">
-				<div
+				{/* <div
 					// key={Object.getOwnPropertyNames(data)}
 					key={Date.now()}
 					className="state-data"
-				>
-					{dataArray.map((item) => {
-						return (
-							<>
-								<div className="state-name">
-									{Object.getOwnPropertyNames(item)}
-								</div>
-								<div className="confirmed-cases">
-									{item.confirmed}
-								</div>
-								<div className="deaths">
-									{item.deaths}
-								</div>
-							</>
-						);
-					})}
-				</div>
+				> */}
+				{/* {stateNames.forEach((name) => {
+					dataArray.name.map((item) => { */}
+				{dataArray.map((item) => {
+					return (
+						<div key={item} className="state-card">
+							<div className="state-name">
+								{/* {Object.getOwnPropertyNames(item)} */}
+								{item.key}
+								Michigan
+							</div>
+							<div className="confirmed-cases">
+								Confirmed: {item.confirmed}
+							</div>
+							<div className="deaths">
+								Deaths: {item.deaths}
+							</div>
+						</div>
+					);
+				})}
+				{/* </div> */}
 			</div>
 			{/* <StateData getCovidData={getCovidData} /> */}
 			{/* <div key={data.key} className="state-data">

@@ -21,7 +21,7 @@ export const getCovidData = () => {
 				);
 				dispatch({
 					type: GET_COVID_DATA,
-					payload: res.data.US,
+					payload: res.data.US.Michigan,
 				});
 			})
 			.catch((err) => {
