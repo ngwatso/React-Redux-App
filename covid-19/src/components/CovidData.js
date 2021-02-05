@@ -7,7 +7,7 @@ const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	useEffect(() => {});
 
 	const dataArray = [data];
-	const stateNames = dataArray.forEach((obj) => obj.key);
+	const stateNames = Object.keys(data);
 
 	const handleGetData = (e) => {
 		e.preventDefault();
@@ -17,7 +17,9 @@ const CovidData = ({ data, isFetching, error, getCovidData }) => {
 	if (isFetching) {
 		return <h2>Fetching Data...</h2>;
 	}
-	console.log("Covid Data: CovidData.js =====> ", stateNames);
+	console.log("Covid Data: stateNames =====> ", stateNames);
+	console.log("Covid Data: dataArray =====> ", dataArray[0]);
+	console.log("Object.keys =====> ", Object.keys(dataArray[0]));
 
 	return (
 		<>
@@ -30,13 +32,14 @@ const CovidData = ({ data, isFetching, error, getCovidData }) => {
 				> */}
 				{/* {stateNames.forEach((name) => {
 					dataArray.name.map((item) => { */}
-				{dataArray.map((item) => {
+				{/* {for ( let i = 0; i < stateNames.length; i++ ) { */}
+				{Object.keys(dataArray[0]).map((item) => {
 					return (
 						<div key={item} className="state-card">
 							<div className="state-name">
 								{/* {Object.getOwnPropertyNames(item)} */}
-								{item.key}
-								Michigan
+								{Object.keys(dataArray[0])}
+								{/* Michigan */}
 							</div>
 							<div className="confirmed-cases">
 								Confirmed: {item.confirmed}

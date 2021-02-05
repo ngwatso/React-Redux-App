@@ -15,13 +15,13 @@ export const getCovidData = () => {
 		)
 			.then((res) => {
 				console.log("API DATA =====> ", res.data.US);
-				console.log(
-					"ObjectNames =====> ",
-					Object.getOwnPropertyNames(res.data.US)
-				);
+				// console.log(
+				// 	"ObjectNames =====> ",
+				// 	Object.getOwnPropertyNames(res.data.US)
+				// );
 				dispatch({
 					type: GET_COVID_DATA,
-					payload: res.data.US.Michigan,
+					payload: res.data.US,
 				});
 			})
 			.catch((err) => {
