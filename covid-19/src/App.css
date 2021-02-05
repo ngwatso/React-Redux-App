@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap");
+
 .App {
 	text-align: center;
 }
@@ -37,10 +39,18 @@
 	}
 }
 
+body {
+	background-color: #170f26;
+	color: #ffb078;
+	font-family: "Play", sans-serif;
+}
+
 button {
 	padding: 0.5%;
-	border-radius: 5%;
-	background-color: #b82459;
+	border-radius: 7%;
+	background-color: #ffb078;
+	color: #170f26;
+	box-shadow: 3px 8px 8px 3px #684743;
 }
 
 .container-state-data {
@@ -52,11 +62,15 @@ button {
 	margin: 0 auto;
 	width: 90%;
 	height: 80vh;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
 
 .state-card {
+	color: #170f26;
 	display: flex;
+	border: 3px solid #684743;
+	border-radius: 7%;
+	background-color: #ffb078;
 	flex-flow: column nowrap;
 	justify-content: center;
 	margin: 0.5%;
@@ -65,4 +79,5 @@ button {
 	height: 4%;
 	padding: 1%;
 	border: 1px solid brown;
+	box-shadow: 5px 8px 8px 5px #684743;
 }
