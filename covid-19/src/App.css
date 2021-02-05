@@ -43,6 +43,13 @@ body {
 	background-color: #170f26;
 	color: #ffb078;
 	font-family: "Play", sans-serif;
+	font-size: 1rem;
+	width: 100vw;
+}
+
+.app {
+	width: 100%;
+	text-align: center;
 }
 
 button {
@@ -58,14 +65,16 @@ button {
 	flex-flow: column wrap;
 	/* justify-content: center; */
 	align-items: center;
-	padding-top: 2%;
+	/* padding-top: 2%; */
 	margin: 0 auto;
-	width: 90%;
+	width: 100vw;
 	height: 80vh;
-	/* border: 1px solid black; */
+
+	/* border: 1px solid white; */
 }
 
-.state-card {
+.state-card,
+.us-card {
 	color: #170f26;
 	display: flex;
 	border: 3px solid #684743;
@@ -74,10 +83,58 @@ button {
 	flex-flow: column nowrap;
 	justify-content: center;
 	margin: 0.5%;
-	width: 15%;
-	max-width: 200px;
-	height: 4%;
+	width: 240px;
+	/* max-width: 200px;
+	min-width: 150px; */
+	height: 40px;
 	padding: 1%;
 	border: 1px solid brown;
 	box-shadow: 5px 8px 8px 5px #684743;
+}
+
+.us-card {
+	width: 40%;
+	height: 80px;
+}
+
+.us-container {
+	padding: 1%;
+	/* border: 1px solid white; */
+	margin: 0 auto;
+	width: 90vw;
+	height: 10vh;
+}
+
+.us-data {
+	/* border: 1px solid blue; */
+	margin: 0 auto;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 1024px) {
+	.container-state-data {
+		height: 170vh;
+	}
+}
+
+@media (max-width: 800px) {
+	.container-state-data {
+		height: 200vh;
+	}
+}
+
+@media (max-width: 500px) {
+	.container-state-data {
+		height: 270vh;
+	}
+}
+
+@media (max-width: 350px) {
+	.container-state-data {
+		height: 100%;
+	}
 }
