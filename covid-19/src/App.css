@@ -44,7 +44,7 @@ body {
 	color: #ffb078;
 	font-family: 'Play', sans-serif;
 	font-size: 1rem;
-	width: 100%;
+	width: 100vw;
 }
 
 .app {
@@ -83,9 +83,9 @@ button {
 	flex-flow: column nowrap;
 	justify-content: center;
 	margin: 0.5%;
-	width: 40%;
+	width: 50%;
 	/* width: 240px; */
-	max-width: 240px;
+	max-width: 230px;
 	/* min-width: 150px; */
 	height: 40px;
 	padding: 1%;
