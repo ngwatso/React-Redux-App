@@ -85,8 +85,8 @@ button {
 	margin: 0.5%;
 	width: 40%;
 	/* width: 240px; */
-	/* max-width: 200px;
-	min-width: 150px; */
+	max-width: 240px;
+	/* min-width: 150px; */
 	height: 40px;
 	padding: 1%;
 	border: 1px solid brown;
